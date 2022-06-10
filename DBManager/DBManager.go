@@ -2,6 +2,7 @@ package DBManager
 
 import (
 	"context"
+	"fmt"
 	"log"
 
 	"os"
@@ -51,6 +52,7 @@ func GetMongoDbCollection(DbName string, CollectionName string) (*mongo.Collecti
 
 func InitCollections() bool {
 	if configErr != nil {
+		fmt.Printf("Dotenv load failed")
 		return false
 	}
 	var err error
