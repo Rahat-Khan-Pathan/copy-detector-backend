@@ -2,19 +2,14 @@ package DBManager
 
 import (
 	"context"
-	"fmt"
 	"log"
 
-	"os"
-
-	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
-var configErr = godotenv.Load()
-var dbURL string = os.Getenv("DB_SOURCE_URL")
+var dbURL string = "mongodb+srv://ph-task:Ertz2LHVRIm9tDsw@rahat.430rp.mongodb.net/?retryWrites=true&w=majority"
 
 var SystemCollections VAICollections
 
@@ -51,10 +46,6 @@ func GetMongoDbCollection(DbName string, CollectionName string) (*mongo.Collecti
 }
 
 func InitCollections() bool {
-	if configErr != nil {
-		fmt.Printf("Dotenv load failed")
-		return false
-	}
 	var err error
 
 	SystemCollections.Users, err = GetMongoDbCollection("copy-detector", "users")
