@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 )
 
-var dbURL string = "mongodb+srv://ph-task:Ertz2LHVRIm9tDsw@rahat.430rp.mongodb.net/?retryWrites=true&w=majority"
+var dbURL string = "mongodb+srv://phitron-copy-detector:HVZBAbuv1qF33yMD@cluster0.2spjz.mongodb.net/?retryWrites=true&w=majority"
 
 var SystemCollections VAICollections
 
