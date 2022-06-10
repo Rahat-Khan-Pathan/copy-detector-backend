@@ -35,7 +35,6 @@ func main() {
 	app.Use(cors.New())
 	// app.Use(Middlewares.Auth)
 	app.Use(pprof.New())
-
 	SetupRoutes(app)
 	app.Static("/Resources", "./Resources")
 	fmt.Println("[OK]")
